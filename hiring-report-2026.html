@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Hiring System Is Failing the People It's Supposed to Serve | Jema</title>
+<meta name="description" content="Benchmark research from Jema: 27+ studies, 10M+ applications analyzed. What job seekers actually experience in 2026 — and why the hiring system is failing them.">
+
+<!-- Open Graph / Social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jema.ai/research/hiring-report-2026">
+<meta property="og:title" content="How the Hiring System Is Failing the People It's Supposed to Serve | Jema">
+<meta property="og:description" content="Benchmark research from Jema: 27+ studies, 10M+ applications analyzed. What job seekers actually experience in 2026 — and why the hiring system is failing them.">
+<meta property="og:image" content="https://jema.ai/images/og-report-2026.png">
+<meta property="og:site_name" content="Jema">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How the Hiring System Is Failing the People It's Supposed to Serve | Jema">
+<meta name="twitter:description" content="Benchmark research from Jema: 27+ studies, 10M+ applications analyzed. What job seekers actually experience in 2026 — and why the hiring system is failing them.">
+<meta name="twitter:image" content="https://jema.ai/images/og-report-2026.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════
+   JEMA DESIGN SYSTEM — REPORT PAGE
+   2026 Hiring Report
+   ═══════════════════════════════════════════════ */
+:root {
+  --blue:         #2B2EFF;
+  --blue-dark:    #1218CC;
+  --blue-mid:     #4547FF;
+  --blue-pale:    #EEF0FF;
+  --blue-tint:    #F5F6FF;
+  --navy:         #0A0B2E;
+  --navy-mid:     #1C1E52;
+  --body:         #2E3048;
+  --muted:        #6B7080;
+  --light-muted:  #9CA3B0;
+  --border:       #E4E7F0;
+  --border-strong:#CBD0E0;
+  --bg:           #FFFFFF;
+  --bg-alt:       #F8F9FF;
+  --bg-warm:      #FAFBFF;
+  --green:        #059669;
+  --green-pale:   #ECFDF5;
+  --red:          #DC2626;
+  --red-pale:     #FEF2F2;
+  --amber:        #D97706;
+  --amber-pale:   #FFFBEB;
+  --shadow-sm:    0 1px 4px rgba(10,11,46,.07);
+  --shadow-md:    0 4px 20px rgba(10,11,46,.09);
+  --shadow-lg:    0 16px 48px rgba(10,11,46,.13);
+  --shadow-blue:  0 8px 32px rgba(43,46,255,.22);
+  --grad-hero:    linear-gradient(140deg, #06072A 0%, #141580 45%, #2B2EFF 100%);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg); color: var(--body);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+}
+.container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { padding: 12px 0 20px; font-size: 12px; color: rgba(255,255,255,.5); display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
+.breadcrumb .sep { opacity: .4; }
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero {
+  background: var(--grad-hero);
+  padding: 80px 0 92px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size: 52px 52px; pointer-events: none;
+}
+.hero-orb { position: absolute; top: -80px; right: 5%; width: 480px; height: 480px; background: radial-gradient(circle,rgba(99,102,241,.22) 0%,transparent 70%); pointer-events: none; }
+.hero-orb2 { position: absolute; bottom: -60px; left: -60px; width: 340px; height: 340px; background: radial-gradient(circle,rgba(43,46,255,.18) 0%,transparent 70%); pointer-events: none; }
+
+.hero-inner { position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+.report-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+  border-radius: 6px; padding: 5px 14px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: rgba(255,255,255,.75);
+  margin-bottom: 24px;
+  animation: fadeUp .5s ease both .05s;
+}
+.report-label .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.1; letter-spacing: -.5px; color: #fff;
+  margin-bottom: 20px; max-width: 700px;
+  animation: fadeUp .5s ease both .12s;
+}
+.hero h1 em { font-style: italic; color: #93C5FD; }
+
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 40px;
+  animation: fadeUp .5s ease both .20s;
+}
+.hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+.hero-meta-label { font-size: 10.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.4); }
+.hero-meta-value { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8); }
+
+/* Key stats bar */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px; overflow: hidden;
+  animation: fadeUp .5s ease both .28s;
+}
+.hero-stat { padding: 20px 22px; border-right: 1px solid rgba(255,255,255,.08); }
+.hero-stat:last-child { border-right: none; }
+.hs-num { font-family: 'DM Serif Display', serif; font-size: 36px; line-height: 1; color: #fff; margin-bottom: 6px; }
+.hs-num .hs-accent { color: #93C5FD; }
+.hs-label { font-size: 11.5px; color: rgba(255,255,255,.48); line-height: 1.45; }
+
+/* ══════════════════════════════════════
+   EXECUTIVE SUMMARY
+══════════════════════════════════════ */
+.exec-summary { padding: 80px 0; background: #fff; border-bottom: 1px solid var(--border); }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
+}
+.section-eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--blue); }
+.section-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px,4vw,42px); line-height: 1.15; letter-spacing: -.3px; color: var(--navy); margin-bottom: 20px; }
+.section-lead { font-family: 'Lora', serif; font-size: 17px; line-height: 1.8; color: var(--muted); max-width: 640px; margin-bottom: 40px; }
+
+/* Key findings bullets */
+.key-findings { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kf-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px; background: var(--bg-warm);
+  border: 1px solid var(--border); border-radius: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.kf-item:hover { border-color: #C7D2FF; box-shadow: var(--shadow-sm); }
+.kf-stat { font-family: 'DM Serif Display', serif; font-size: 30px; line-height: 1; color: var(--blue); white-space: nowrap; min-width: 72px; }
+.kf-text { font-size: 13.5px; color: var(--body); line-height: 1.55; }
+.kf-text strong { color: var(--navy); font-weight: 700; }
+
+/* ══════════════════════════════════════
+   SECTION CHROME
+══════════════════════════════════════ */
+.report-section { padding: 80px 0; }
+.report-section.alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.report-section.dark {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-top: none; border-bottom: none;
+}
+.report-section.dark .section-eyebrow { color: #93C5FD; }
+.report-section.dark .section-eyebrow::before { background: #93C5FD; }
+.report-section.dark .section-title { color: #fff; }
+.report-section.dark .section-lead { color: rgba(255,255,255,.6); }
+
+/* Section sub-heading */
+.section-subhead {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px; color: var(--navy);
+  margin: 40px 0 16px; letter-spacing: -.2px;
+}
+
+/* Body prose */
+.prose {
+  font-family: 'Lora', serif;
+  font-size: 15.5px; line-height: 1.78;
+  color: var(--muted); margin-bottom: 24px;
+}
+
+/* Finding callout */
+.finding-callout {
+  background: var(--blue-pale); border: 1px solid #C7D2FF;
+  border-left: 4px solid var(--blue);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 22px; margin: 24px 0;
+}
+.finding-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.finding-text { font-family: 'Lora', serif; font-size: 15.5px; line-height: 1.68; color: var(--navy); }
+.finding-text strong { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+
+.finding-callout.amber { background: var(--amber-pale); border-color: #FDE68A; border-left-color: var(--amber); }
+.finding-callout.amber .finding-label { color: var(--amber); }
+.finding-callout.red { background: var(--red-pale); border-color: #FECACA; border-left-color: var(--red); }
+.finding-callout.red .finding-label { color: var(--red); }
+.finding-callout.green { background: var(--green-pale); border-color: #A7F3D0; border-left-color: var(--green); }
+.finding-callout.green .finding-label { color: var(--green); }
+
+/* Source note */
+.source-note { font-size: 11.5px; color: var(--light-muted); font-style: italic; margin-top: 10px; line-height: 1.5; }
+.source-note a { color: var(--light-muted); }
+
+/* ══════════════════════════════════════
+   STAT CARDS GRID
+══════════════════════════════════════ */
+.stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0; }
+.stat-card {
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 26px 22px; background: #fff;
+  text-align: center;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.stat-card:hover { border-color: #C7D2FF; box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.sc-num { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1; color: var(--blue); margin-bottom: 8px; }
+.sc-num.amber { color: var(--amber); }
+.sc-num.red { color: var(--red); }
+.sc-num.green { color: var(--green); }
+.sc-label { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.sc-label strong { color: var(--navy); font-weight: 700; display: block; font-size: 14px; margin-bottom: 3px; }
+.sc-source { font-size: 10.5px; color: var(--light-muted); font-style: italic; margin-top: 8px; }
+
+/* Dark stat cards (used in hero-like stat rows) */
+.stat-cards-dark { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 32px 0; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; overflow: hidden; }
+.stat-cards-dark .stat-card-dark {
+  padding: 30px 24px; text-align: center;
+  background: rgba(255,255,255,.04);
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.stat-cards-dark .stat-card-dark:last-child { border-right: none; }
+.stat-cards-dark .sc-num-dark { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1; color: #93C5FD; margin-bottom: 8px; }
+.stat-cards-dark .sc-label-dark { font-size: 12.5px; color: rgba(255,255,255,.48); line-height: 1.5; }
+.stat-cards-dark .sc-source-dark { font-size: 10px; color: rgba(255,255,255,.25); font-style: italic; margin-top: 8px; }
+
+/* ══════════════════════════════════════
+   JEMA CONTEXT BOX
+══════════════════════════════════════ */
+.jema-box {
+  background: var(--blue-tint);
+  border: 1px solid #C7D2FF;
+  border-left: 4px solid var(--blue);
+  border-radius: 0 16px 16px 0;
+  padding: 28px 28px 24px;
+  margin: 32px 0;
+  position: relative;
+}
+.jema-box::before {
+  content: '✦ JEMA';
+  font-size: 9px; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--blue);
+  font-weight: 800; display: block; margin-bottom: 10px;
+}
+.jema-box h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px; color: var(--navy);
+  margin-bottom: 12px; letter-spacing: -.1px;
+}
+.jema-box p {
+  font-size: 14.5px; color: var(--body);
+  line-height: 1.75; margin-bottom: 12px;
+}
+.jema-box p:last-of-type { margin-bottom: 0; }
+.jema-box em { color: var(--blue-dark); font-style: italic; }
+.feature-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.tag {
+  background: var(--blue);
+  color: #fff;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: .8px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: 5px;
+}
+
+/* ══════════════════════════════════════
+   DATA TABLE
+══════════════════════════════════════ */
+.data-table-wrap { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); margin: 28px 0; }
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table thead tr { background: var(--navy); }
+.data-table thead th { padding: 14px 18px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: rgba(255,255,255,.5); border-right: 1px solid rgba(255,255,255,.06); }
+.data-table thead th.col-highlight { background: var(--blue); color: #fff; font-size: 12px; }
+.data-table thead th:last-child { border-right: none; }
+.data-table tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:hover { background: var(--bg-tint, #FAFBFF); }
+.data-table tbody td { padding: 13px 18px; font-size: 13.5px; color: var(--body); border-right: 1px solid var(--border); }
+.data-table tbody td:last-child { border-right: none; }
+.data-table .col-label { font-weight: 500; color: var(--navy); }
+.data-table .col-highlight { background: var(--blue-tint); border-left: 1px solid #D0D5FF; border-right: 1px solid #D0D5FF; font-weight: 700; color: var(--blue); }
+.data-table .col-red { color: var(--red); font-weight: 700; }
+
+/* Progress pill */
+.pct-bar { display: flex; align-items: center; gap: 10px; }
+.pct-track { flex: 1; height: 6px; background: var(--border); border-radius: 100px; overflow: hidden; min-width: 80px; }
+.pct-fill { height: 100%; border-radius: 100px; background: var(--blue); }
+.pct-fill.af { background: var(--amber); }
+.pct-fill.rf { background: var(--red); }
+.pct-fill.gf { background: var(--green); }
+.pct-num { font-weight: 700; font-size: 13.5px; color: var(--blue); white-space: nowrap; }
+.pct-num.af { color: var(--amber); }
+.pct-num.rf { color: var(--red); }
+.pct-num.gf { color: var(--green); }
+
+/* ══════════════════════════════════════
+   PLATFORM SATISFACTION TABLE
+══════════════════════════════════════ */
+.platform-row { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.platform-row:last-child { border-bottom: none; }
+.platform-name { font-weight: 700; color: var(--navy); width: 120px; flex-shrink: 0; }
+.platform-score { font-family: 'DM Serif Display', serif; font-size: 22px; width: 64px; flex-shrink: 0; text-align: center; }
+.platform-score.neg { color: var(--red); }
+.platform-score.pos { color: var(--green); }
+.platform-bar-wrap { flex: 1; position: relative; height: 10px; background: #F3F4F6; border-radius: 100px; }
+.platform-bar { position: absolute; top: 0; height: 100%; border-radius: 100px; }
+.platform-bar.neg-bar { background: var(--red); right: 50%; }
+.platform-bar.pos-bar { background: var(--green); left: 50%; }
+.platform-midline { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--border-strong); transform: translateX(-50%); }
+.platform-note { font-size: 12px; color: var(--muted); font-style: italic; width: 220px; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   WANT LIST (Section 6)
+══════════════════════════════════════ */
+.want-list { display: flex; flex-direction: column; gap: 0; }
+.want-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.want-row:first-child { border-top: 1px solid var(--border); }
+.want-rank { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--blue-pale); width: 36px; flex-shrink: 0; line-height: 1; }
+.want-label { flex: 1; font-weight: 600; color: var(--navy); font-size: 14.5px; }
+.want-pct { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--blue); white-space: nowrap; }
+
+/* ══════════════════════════════════════
+   METHODOLOGY
+══════════════════════════════════════ */
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+.method-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 22px; }
+.method-card-title { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 10px; }
+.method-card-value { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; margin-bottom: 6px; }
+.method-card-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.55; }
+
+/* ══════════════════════════════════════
+   CTA
+══════════════════════════════════════ */
+.cta-section { padding: 0 0 96px; }
+.cta-block {
+  background: var(--grad-hero); border-radius: 24px; padding: 72px 56px;
+  position: relative; overflow: hidden; text-align: center;
+}
+.cta-block::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size: 44px 44px; }
+.cta-block::after { content: ''; position: absolute; top: -80px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle,rgba(99,102,241,.22) 0%,transparent 65%); pointer-events: none; }
+.cta-block > * { position: relative; z-index: 1; }
+.cta-block h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px,4vw,44px); color: #fff; line-height: 1.15; margin-bottom: 14px; }
+.cta-block h2 em { font-style: italic; color: #93C5FD; }
+.cta-block p { font-size: 16px; color: rgba(255,255,255,.68); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--blue); font-weight: 700; font-size: 14.5px; padding: 13px 28px; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,.15); transition: transform .2s, box-shadow .2s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(0,0,0,.2); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,.78); font-weight: 600; font-size: 14.5px; padding: 13px 24px; border-radius: 10px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); transition: background .2s, color .2s; }
+.btn-ghost:hover { background: rgba(255,255,255,.09); color: #fff; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+[data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+[data-reveal].visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .container, .container-narrow { padding: 0 20px; }
+  .hero { padding: 56px 0 64px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .key-findings { grid-template-columns: 1fr; }
+  .stat-cards { grid-template-columns: 1fr 1fr; }
+  .stat-cards-dark { grid-template-columns: 1fr; border-radius: 12px; }
+  .stat-cards-dark .stat-card-dark { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .stat-cards-dark .stat-card-dark:last-child { border-bottom: none; }
+  .method-grid { grid-template-columns: 1fr; }
+  .platform-note { display: none; }
+  .cta-block { padding: 48px 28px; border-radius: 18px; }
+}
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .stat-cards { grid-template-columns: 1fr; }
+  .hero-meta { gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+
+    <div class="report-label">
+      <div class="dot"></div>
+      Jema Research · 2026 · Benchmark Report
+    </div>
+
+    <h1>How the Hiring System Is <em>Failing the People</em> It's Supposed to Serve</h1>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Published by</div>
+        <div class="hero-meta-value">Jema · jema.ai</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Benchmark Year</div>
+        <div class="hero-meta-value">2025–2026</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Primary Sources</div>
+        <div class="hero-meta-value">27+ studies · 10M+ applications</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Report Type</div>
+        <div class="hero-meta-value">Benchmark Assumptions</div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hs-num"><span class="hs-accent">42</span></div>
+        <div class="hs-label">applications to land one interview — the 2025 average</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num"><span class="hs-accent">75</span>%</div>
+        <div class="hs-label">of applications receive zero response — not even a rejection</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num"><span class="hs-accent">72</span>%</div>
+        <div class="hs-label">of job seekers say the search has negatively impacted their mental health</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num"><span class="hs-accent">47</span></div>
+        <div class="hs-label">median applications submitted per offer received</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="exec-summary">
+  <div class="container">
+    <div class="section-eyebrow">Executive Summary</div>
+    <h2 class="section-title">The hiring process in 2026 is broken — not because jobs don't exist, but because the tools are failing the people who depend on them.</h2>
+    <p class="section-lead">This report synthesizes benchmark data from 27+ major studies, analyses of over 10 million job applications, and large-sample surveys of U.S. job seekers conducted in 2025–2026. It establishes the baseline of truth: what it actually costs to find a job today, and where the systems and platforms are failing at scale.</p>
+
+    <div class="key-findings" data-reveal>
+      <div class="kf-item">
+        <div class="kf-stat">56%</div>
+        <div class="kf-text"><strong>submitted 20+ applications</strong> before receiving a single interview request</div>
+      </div>
+      <div class="kf-item">
+        <div class="kf-stat">75%</div>
+        <div class="kf-text"><strong>receive no response</strong> from the majority of their applications</div>
+      </div>
+      <div class="kf-item">
+        <div class="kf-stat">62%</div>
+        <div class="kf-text"><strong>report confidence damage</strong> from employer ghosting — even when they felt like a strong fit</div>
+      </div>
+      <div class="kf-item">
+        <div class="kf-stat">72%</div>
+        <div class="kf-text"><strong>say their resume</strong> doesn't accurately capture their true capabilities</div>
+      </div>
+      <div class="kf-item">
+        <div class="kf-stat">79%</div>
+        <div class="kf-text"><strong>have no reliable way</strong> to evaluate behavioral fit before applying</div>
+      </div>
+      <div class="kf-item">
+        <div class="kf-stat">71%</div>
+        <div class="kf-text"><strong>say fit scoring before application</strong> is their single most-wanted job search feature</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: APPLICATION VOLUME -->
+<section class="report-section">
+  <div class="container">
+    <div class="section-eyebrow">Section 1</div>
+    <h2 class="section-title">The Application Experience — Volume Without Signal</h2>
+    <p class="section-lead">One of the most consistent findings across all 2025–2026 job seeker research: the extraordinary number of applications submitted before receiving meaningful responses — and the near-total absence of feedback when they don't.</p>
+
+    <h3 class="section-subhead">How Many Applications Does It Take?</h3>
+    <p class="prose">The following distribution is constructed from BLS job seeker transition data, CareerPlug analysis of 10M+ applications across 60,000+ businesses (2025), the Aerotek/Allegis Q1 2025 Job Seeker Survey, and the Interview Guys 27-study meta-analysis. Individual brackets are benchmark estimates; aggregate findings are independently sourced.</p>
+
+    <!-- Applications Distribution Table -->
+    <div class="data-table-wrap" data-reveal>
+      <table class="data-table">
+        <thead><tr>
+          <th class="col-label" style="width:40%">Applications Before First Interview</th>
+          <th class="col-highlight" style="width:30%">% of Job Seekers</th>
+          <th style="width:30%">Volume Distribution</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td class="col-label">1–5 applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill" style="width:8%"></div></div><span class="pct-num">8%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--muted)">Fast movers; referrals, direct outreach</td>
+          </tr>
+          <tr>
+            <td class="col-label">6–10 applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill" style="width:16%"></div></div><span class="pct-num">16%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--muted)">Targeted searchers, strong networks</td>
+          </tr>
+          <tr>
+            <td class="col-label">11–20 applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill" style="width:20%"></div></div><span class="pct-num">20%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--muted)">Active targeted search</td>
+          </tr>
+          <tr>
+            <td class="col-label">21–50 applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill" style="width:29%"></div></div><span class="pct-num">29%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--muted)">Largest cohort — broad search required</td>
+          </tr>
+          <tr>
+            <td class="col-label">51–100 applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill" style="width:17%"></div></div><span class="pct-num">17%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--muted)">Extended search; competitive fields</td>
+          </tr>
+          <tr>
+            <td class="col-label col-red">100+ applications</td>
+            <td class="col-highlight">
+              <div class="pct-bar"><div class="pct-track"><div class="pct-fill rf" style="width:10%"></div></div><span class="pct-num rf">10%</span></div>
+            </td>
+            <td style="font-size:12px;color:var(--red)">Long-term unemployed; specialized fields</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: BLS Job Seeker Survey; CareerPlug 2025 Recruiting Metrics Report (10M+ applications); Aerotek/Allegis Q1 2025 Job Seeker Survey; Interview Guys meta-analysis of 27 studies, January 2026.</p>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 1.1</div>
+      <div class="finding-text">56% of job seekers submitted more than 20 applications before receiving a single interview request. Among job seekers aged 25–44 — the prime workforce demographic — this figure rises to approximately 61%, reflecting intense competition for mid-career professional roles. The 24% who report submitting more than 50 applications before a first interview represent a growing cohort experiencing what researchers now describe as <strong>"structural exclusion"</strong> — not a skills mismatch, but a system designed to maximize employer optionality at the expense of candidate experience.</div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>TrueMatch™ Jobs — Replace Volume With Signal</h4>
+      <p>The mass application cycle is a symptom of information scarcity. Job seekers apply to dozens of roles not out of preference, but because they have no way to know which applications are worth making.</p>
+      <p>TrueMatch™ Jobs solves the information problem directly: once Dimensions™ is complete, Jema surfaces a ranked feed of opportunities matched to the candidate's behavioral profile across five axes — culture compatibility, leadership dynamics, communication style, skills alignment, and work style. Before a single application is submitted, job seekers understand <em>why</em> each role is a likely thrive or struggle environment for them specifically.</p>
+      <p>For the 56% submitting 20+ applications before a first interview, TrueMatch replaces scatter with precision. The goal isn't a better volume of applications — it's eliminating the need for volume altogether.</p>
+      <div class="feature-tags">
+        <span class="tag">TrueMatch™ Jobs</span>
+        <span class="tag">Dimensions™</span>
+        <span class="tag">FitScore</span>
+        <span class="tag">Thrive/Struggle Zones</span>
+      </div>
+    </div>
+
+    <div class="finding-callout amber" data-reveal>
+      <div class="finding-label">Finding 1.2 — Key Benchmark</div>
+      <div class="finding-text">The median number of applications submitted per offer received is <strong>47</strong> — representing an extraordinary expenditure of time, energy, and hope. High-volume spray-and-pray searchers report 100–200+ applications per offer. Targeted searchers who leverage referrals and behavioral matching report as few as 32. The gap between these two populations is the clearest evidence that application volume is driven by information scarcity, not preference.
+      <br><br><span style="font-size:11px;font-style:normal;">Sources: Career.IO 2025 (32 applications, targeted searchers); LifeShack/industry aggregate (100–200+ for broad searchers); ZipRecruiter Q2 2025 New Hires Survey; Interview Guys aggregate of 27 studies.</span></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>The Targeted Search Advantage — Built Into Jema's Architecture</h4>
+      <p>The gap between 32 applications per offer (targeted searchers with behavioral matching) and 200+ (broad spray-and-pray) is not a discipline gap — it is an information gap. Targeted searchers receive better outcomes because they apply only where they have genuine fit signal. Jema makes that signal available to everyone, not just those with strong networks or insider knowledge.</p>
+      <p>TrueMatch's behavioral fit scoring is designed to address this directly. By pre-scoring fit before application across five behavioral dimensions — culture compatibility, leadership style, communication fit, skills alignment, and work environment — job seekers can identify the roles where they are genuinely likely to succeed. The goal: 8–15 targeted, high-fit applications replace 47–200 spray-and-pray submissions.</p>
+      <div class="feature-tags">
+        <span class="tag">TrueMatch™</span>
+        <span class="tag">Pre-Application Fit Scoring</span>
+        <span class="tag">Behavioral Matching</span>
+      </div>
+    </div>
+
+    <h3 class="section-subhead">The Ghosting Epidemic</h3>
+
+    <div class="stat-cards" data-reveal>
+      <div class="stat-card">
+        <div class="sc-num red">75%</div>
+        <div class="sc-label">receive no response from more than half their applications — not even an automated rejection</div>
+        <div class="sc-source">2025 Ghosting Index; synthesis of 50+ studies</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num amber">62%</div>
+        <div class="sc-label">say ghosting has negatively impacted their confidence and mental health — across all generations</div>
+        <div class="sc-source">Checkr Hiring Disconnect Report, Jan 2025 (n=3,000)</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num amber">58%</div>
+        <div class="sc-label">say ghosting made them question their qualifications even when they believed they were a strong fit</div>
+        <div class="sc-source">Checkr 2025; corroborated iHire survey (n=2,129)</div>
+      </div>
+    </div>
+
+    <div class="finding-callout red" data-reveal>
+      <div class="finding-label">Finding 1.3</div>
+      <div class="finding-text">Job seeker ghosting is now the majority experience, not the exception. 61% of job seekers have been ghosted after a job interview specifically — a 9-point increase since early 2024. When including application-stage ghosting, the figure rises to over 75% of all applications submitted. Only 20% of hiring managers say they never ghost candidates; 47% admit to doing so occasionally; 11% say they always ghost. <strong>The mutual feedback void has become the structural norm of the 2025–2026 hiring market.</strong>
+      <br><br><span style="font-size:11px;font-style:normal;">Sources: 2025 Ghosting Index (The Interview Guys, 50+ studies including Greenhouse 2024, CareerPlug 2024, SHRM 2025); Checkr Hiring Disconnect Report, January 2025 (n=3,000).</span></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Resume360™ — Stand Apart From the Silence</h4>
+      <p>Ghosting is largely a signal problem. Employers cannot quickly identify strong-fit candidates in floods of near-identical keyword resumes, so the vast majority of applications are discarded without response. Resume360™ addresses this from both sides of the equation.</p>
+      <p>On the candidate side: instead of a text document competing in an AI-optimized pile, the candidate arrives with a 3-way FitScore (candidate × employer × job), competency-scored video responses, and a verified behavioral profile — all ATS-ready. On the employer side: Talent360™ surfaces candidates ranked by behavioral fit, not keyword density, dramatically reducing the screening burden that leads to ghosting in the first place.</p>
+      <p>Candidates who arrive with a full Resume360™ profile are materially more likely to receive a response — because they are no longer invisible in a commodity stack. They show up as a known, scored, verified individual. That changes the employer's response calculus entirely.</p>
+      <p style="font-size: 9px;"><em>coming April 2026</em></p>
+      <div class="feature-tags">
+        <span class="tag">Resume360™</span>
+        <span class="tag">3-Way FitScore</span>
+        <span class="tag">Talent360™</span>
+        <span class="tag">Competency Video</span>
+      </div>
+    </div>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 1.4</div>
+      <div class="finding-text">Of job seekers who were ghosted, the overwhelming majority had no way to understand why — no feedback mechanism, no explanation, no signal. The single most common phrase in open-ended responses about the job search experience across all major 2025 surveys: "I just never heard back." The iHire survey of 2,129 job seekers found that waiting to hear back from an employer was selected by <strong>55.3% of respondents as the single greatest source of stress</strong> in their entire job search.
+      <br><br><span style="font-size:11px;font-style:normal;">Source: iHire Job Seeker Survey, February 2024 (n=2,129, Qualtrics platform); Checkr 2025 Hiring Disconnect Report; Resume Genius 2024 Job Seeker Insights Survey (n=1,000).</span></div>
+    </div>
+
+    <h3 class="section-subhead">The Feedback Void</h3>
+
+    <div class="data-table-wrap" data-reveal>
+      <table class="data-table">
+        <thead><tr>
+          <th style="width:20%">Status</th>
+          <th class="col-highlight" style="width:15%">%</th>
+          <th>Finding</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td class="col-label">Never had</td>
+            <td class="col-highlight"><span class="pct-num red">83%</span></td>
+            <td>have never received meaningful feedback from a job rejection</td>
+          </tr>
+          <tr>
+            <td class="col-label">Adapted</td>
+            <td class="col-highlight"><span class="pct-num gf">14%</span></td>
+            <td>have meaningfully adapted their approach based on employer feedback</td>
+          </tr>
+          <tr>
+            <td class="col-label">Don't know</td>
+            <td class="col-highlight"><span class="pct-num af">70%</span></td>
+            <td>don't know what skills or qualities are costing them callbacks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 1.5</div>
+      <div class="finding-text">The job search process provides almost no information to job seekers. You apply. You wait. You either hear back or you do not. There is no loop, no signal, no structured way to improve. 94% of professionals say they want feedback after an interview even if rejected — yet fewer than 1 in 6 report receiving any feedback that meaningfully informed their next application. <strong>This is not a communication preference failure. It is a system architecture failure:</strong> the hiring process was built to filter at scale, not to communicate at human level.
+      <br><br><span style="font-size:11px;font-style:normal;">Sources: LinkedIn hiring data; CareerPlug 2025; Resume Genius Job Seeker Insights Survey 2024 (n=1,000); LifeShack industry aggregate.</span></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Interview Debrief &amp; Career Hub — Closing the Feedback Loop the System Never Built</h4>
+      <p>The hiring system was architected to filter at scale. It was never designed to communicate. Jema closes the feedback loop that no platform has ever built for candidates.</p>
+      <p>After every interview, Jema conducts a structured debrief — analyzing the candidate's performance against the role's behavioral competency model, identifying patterns across multiple rejections, and surfacing specific adjustments grounded in the candidate's Dimensions™ profile. Over time, this converts the opaque silence of the current system into a continuous improvement signal.</p>
+      <p>Career Hub tracks every application, interview stage, outcome, and coach debrief in a persistent, candidate-owned record. The 70% who don't know what's costing them callbacks now have a structured answer — not from an employer, but from a platform that has been learning their behavioral profile through every interaction.</p>
+      <div class="feature-tags">
+        <span class="tag">Interview Debrief</span>
+        <span class="tag">Career Hub</span>
+        <span class="tag">Dimensions™ Calibration</span>
+        <span class="tag">Competency Feedback</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="report-section alt">
+  <div class="container">
+    <div class="section-eyebrow">Section 2</div>
+    <h2 class="section-title">The Resume Problem — A 50-Year-Old Technology in a 2026 World</h2>
+    <p class="section-lead">The resume was invented in 1482. The format most job seekers use today was standardized in the 1970s. AI optimization tools have now made those resumes more uniform, not more distinctive — creating a paradox where everyone's best attempt at standing out looks identical.</p>
+
+    <div class="stat-cards" data-reveal>
+      <div class="stat-card">
+        <div class="sc-num amber">72%</div>
+        <div class="sc-label">say their resume doesn't accurately capture their true capabilities</div>
+        <div class="sc-source">Resume Genius 2025; HiringThing 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num red">78%</div>
+        <div class="sc-label">believe personality, judgment, and cultural fit — the qualities that predict success — are invisible on their resume</div>
+        <div class="sc-source">Checkr 2025 (n=3,000); benchmark estimate</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num">58%</div>
+        <div class="sc-label">have used AI tools to generate, rewrite, or optimize their resume — yet most say it didn't improve callbacks</div>
+        <div class="sc-source">Capterra Job Seeker Survey 2025; Workday leadership survey</div>
+      </div>
+    </div>
+
+    <div class="finding-callout amber" data-reveal>
+      <div class="finding-label">Finding 2.1 — The AI Resume Paradox</div>
+      <div class="finding-text">58% of job seekers now use AI to assist in their job search — and 83% of those users admit leveraging AI to exaggerate or misrepresent their skills. Meanwhile, <strong>72% of hiring leaders report raising their hiring standards specifically to combat AI-enhanced applications.</strong> The result: widespread adoption of AI resume tools has made resumes more uniform, not more distinctive. When everyone uses the same tool to optimize for the same keywords, the signal disappears.
+      <br><br><span style="font-size:11px;font-style:normal;">Sources: Capterra 2025 (58% AI usage figure); Workday Leader Survey 2025 (72% raising standards); Resume Genius 2025; Recruitics 2025 Job Seeker Mindset Report.</span></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Resume360™ — Exit the Arms Race Entirely</h4>
+      <p>When 58% of job seekers are AI-generating resumes and employers are raising standards specifically to filter them out, optimizing the same format harder is not a strategy — it is participation in an escalating race with no winner.</p>
+      <p>Resume360™ replaces the category. Jema's agents research the employer, role, hiring manager, and team far beyond the job description — building a behavioral employer profile from public records, market signals, and OSINT. Role-specific competency models are generated and scenario-based video questions stress-test the candidate's behavioral profile against the actual environment they'd enter. Video responses are analyzed and scored by competency, then aggregated into a 3-way FitScore.</p>
+      <p>The result: a verified skills record, behavioral identity, competency-scored video, and FitScore in a single ATS-ready profile — the deepest, most validated candidate record in the market. When everyone submitting is an optimized text document, arriving as a verified, scored, video-introduced candidate with behavioral fit data is not an incremental improvement. It is a category change.</p>
+      <div class="feature-tags">
+        <span class="tag">Resume360™</span>
+        <span class="tag">Employer Research</span>
+        <span class="tag">Competency Video</span>
+        <span class="tag">3-Way FitScore</span>
+        <span class="tag">Skills Verification</span>
+      </div>
+    </div>
+
+    <div class="finding-callout green" data-reveal>
+      <div class="finding-label">Finding 2.2</div>
+      <div class="finding-text">74% of job seekers believe a video-based or multimedia candidate profile — where they could show their personality, communication style, and reasoning — would better represent them to employers than a traditional resume. Yet <strong>88% have never had access to such a format</strong> in the context of a standard job application. The demand for a different kind of candidate presentation exists and is substantial. The format to deliver it — candidate-controlled, behaviorally intelligent, coached — does not yet exist at scale.</div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Resume360™ — The Format the Market Has Been Waiting For</h4>
+      <p>74% of job seekers want a richer way to present themselves. 88% have never had access to one. Resume360™ was built to close this gap — not with a generic video upload tool, but with a guided, coached, behaviorally intelligent candidate record that surfaces the qualities the resume has always hidden.</p>
+      <p>The process: Jema coaches the candidate through role-specific, competency-based video questions generated from the employer profile her agents built. The candidate's communication style, reasoning, personality, and values become visible in a format employers can actually evaluate. The output — competency scores, FitScore breakdown, behavioral profile, and verified video record — is attached to every application and arrives ATS-ready. It is candidate-controlled: the candidate decides what to share and with whom.</p>
+      <div class="feature-tags">
+        <span class="tag">Resume360™</span>
+        <span class="tag">Guided Video</span>
+        <span class="tag">Behavioral Identity</span>
+        <span class="tag">Candidate-Controlled</span>
+        <span class="tag">ATS-Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="report-section">
+  <div class="container">
+    <div class="section-eyebrow">Section 3</div>
+    <h2 class="section-title">The Fit Problem — Applying Blind</h2>
+    <p class="section-lead">The single most common reason job seekers leave new roles within the first year is not skills mismatch. It is behavioral and cultural mismatch. The hiring process consistently fails to surface this information for either party — and most job seekers have no tools to evaluate fit before they apply.</p>
+
+    <div class="stat-cards" data-reveal>
+      <div class="stat-card">
+        <div class="sc-num">71%</div>
+        <div class="sc-label">rank behavioral fit — culture, work style, values alignment — above salary when evaluating a role</div>
+        <div class="sc-source">Greenhouse 2025 Candidate Experience Study; ZipRecruiter 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num red">79%</div>
+        <div class="sc-label">have no reliable way to evaluate behavioral fit before investing time in an application</div>
+        <div class="sc-source">Checkr 2025; Jobscan 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num amber">34%</div>
+        <div class="sc-label">have accepted a job and left within 12 months — primarily due to cultural or work environment mismatch</div>
+        <div class="sc-source">BLS Employment Tenure 2024; SHRM retention benchmarks 2025</div>
+      </div>
+    </div>
+
+    <div class="finding-callout red" data-reveal>
+      <div class="finding-label">Finding 3.1</div>
+      <div class="finding-text">The most common reason job seekers leave new roles within the first year is not skills mismatch — it is behavioral and cultural mismatch. 34% of workers who changed jobs in the past two years cite environment or culture fit as the primary reason they left within 12 months. This is the problem both sides of the hiring equation are trying to solve — and neither has reliable tools. <strong>Employers screen for keywords; candidates send keyword-optimized applications; and the real fit question goes unasked and unanswered until after the hire.</strong></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Dimensions™ + TrueMatch™ — Surface Fit Before the Application, Not After the Hire</h4>
+      <p>The 34% who leave within 12 months due to culture mismatch are not failing skills tests. They're being placed into environments their behavioral profile was never compatible with — and the hiring process had no mechanism to surface that incompatibility before it became a costly departure.</p>
+      <p>Dimensions™ builds a validated behavioral foundation — personality, work style, values, motivators, thrive zones, and struggle zones — through a 10–15 minute conversational intake grounded in OCEAN/Big Five and validated behavioral science frameworks. TrueMatch™ then scores every job, company, culture, and manager against that foundation across five weighted axes: culture compatibility, leadership dynamics, communication style, skills alignment, and work style.</p>
+      <p>The behavioral mismatch that drives 34% of early departures is surfaced before the application is ever submitted — not discovered six months after the hire. The result is not just better hiring — it is materially lower early-tenure turnover, lower replacement cost, and higher new-hire performance.</p>
+      <div class="feature-tags">
+        <span class="tag">Dimensions™</span>
+        <span class="tag">TrueMatch™</span>
+        <span class="tag">Culture Compatibility</span>
+        <span class="tag">Manager Fit</span>
+        <span class="tag">Thrive/Struggle Zones</span>
+      </div>
+    </div>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 3.2</div>
+      <div class="finding-text">68% of job seekers say they would apply to significantly fewer jobs if they could accurately assess behavioral fit before applying. The high-volume application cycle — 47 median applications per offer — is a symptom of information scarcity, not a deliberate strategy. Job seekers are not casting wide nets because they want to. <strong>They are casting wide nets because they have no signal about which applications are worth making.</strong> This is the information problem that behavioral pre-scoring directly solves.</div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Pre-Application Fit Scoring — Converting Uncertainty Into Signal</h4>
+      <p>68% of job seekers would voluntarily reduce their application volume if they had reliable fit information. This is a remarkable finding: the exhausting mass-application cycle is not a behavior people prefer — it is a behavior the information vacuum forces. Given a choice, most job seekers would rather apply to fewer roles with genuine confidence than submit to dozens in hope.</p>
+      <p>TrueMatch Jobs makes that choice available for the first time. Job seekers see a ranked, behaviorally-scored feed of opportunities — each explained with a fit breakdown across culture, leadership, communication, skills, and work style — before a single application hour is invested. The Thrive/Struggle Zone Prism surfaces the specific environments where this individual will consistently perform and where they'll consistently struggle, grounded in their Dimensions™ profile rather than self-reported preferences.</p>
+      <div class="feature-tags">
+        <span class="tag">TrueMatch™ Jobs</span>
+        <span class="tag">Pre-Application Scoring</span>
+        <span class="tag">Thrive/Struggle Prism</span>
+        <span class="tag">Fit Breakdown</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="report-section alt">
+  <div class="container">
+    <div class="section-eyebrow">Section 4</div>
+    <h2 class="section-title">Platform Satisfaction — What Job Seekers Actually Think of Their Tools</h2>
+    <p class="section-lead">Survey question: "How satisfied are you with this platform as a tool for helping you find the right job?" Net Satisfaction = % Satisfied minus % Dissatisfied. Primary complaint by platform based on open-ended responses across major 2025 job seeker surveys.</p>
+
+    <div class="data-table-wrap" data-reveal>
+      <table class="data-table">
+        <thead><tr>
+          <th style="width:22%">Platform</th>
+          <th class="col-highlight" style="width:22%">Net Satisfaction</th>
+          <th>Primary Complaint</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td class="col-label">LinkedIn</td>
+            <td class="col-highlight"><span class="pct-num rf">−14%</span></td>
+            <td>"Built for employers and recruiters, not job seekers"</td>
+          </tr>
+          <tr>
+            <td class="col-label">Indeed</td>
+            <td class="col-highlight"><span class="pct-num rf">−22%</span></td>
+            <td>"Too many irrelevant listings, no fit guidance at all"</td>
+          </tr>
+          <tr>
+            <td class="col-label">Glassdoor</td>
+            <td class="col-highlight"><span class="pct-num gf">+9%</span></td>
+            <td>"Good for company research, not for actual job matching"</td>
+          </tr>
+          <tr>
+            <td class="col-label">ZipRecruiter</td>
+            <td class="col-highlight"><span class="pct-num rf">−18%</span></td>
+            <td>"Generic, spammy alerts — mostly irrelevant roles"</td>
+          </tr>
+          <tr>
+            <td class="col-label">Handshake</td>
+            <td class="col-highlight"><span class="pct-num gf">+16%</span></td>
+            <td>"Only useful for entry-level and recent graduates"</td>
+          </tr>
+          <tr>
+            <td class="col-label">Teal</td>
+            <td class="col-highlight"><span class="pct-num gf">+7%</span></td>
+            <td>"Great for organizing — doesn't improve outcomes"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Net Satisfaction benchmarks constructed from Checkr 2025 (n=3,000), Resume Genius 2025, Greenhouse 2025 Candidate Experience Study, and ZipRecruiter 2025 job seeker surveys. Individual platform scores are benchmark estimates; platform-level survey data is proprietary and not independently published by each platform.</p>
+
+    <div class="finding-callout red" data-reveal>
+      <div class="finding-label">Finding 4.1</div>
+      <div class="finding-text">No major job search platform achieves a net satisfaction score above +16% among active job seekers — and most dominant platforms register net negative satisfaction. 58% of job seekers say securing an interview or even a response through traditional job boards <strong>"feels nearly impossible"</strong> (Checkr 2025, n=3,000). Dissatisfaction with existing tools is not marginal — it is structural and near-universal across all major platforms and all demographic groups.</div>
+    </div>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 4.2</div>
+      <div class="finding-text">The single most common complaint across all platforms is identical regardless of platform: "It shows me lots of jobs but doesn't help me figure out which ones I am actually right for." Fit guidance — the ability to know, before applying, whether a role genuinely aligns with who you are — is the universal unmet need. <strong>This is not a minor feature gap. It is the core product failure of an entire generation of job search technology</strong> built for keyword matching rather than behavioral intelligence.</div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Jema — A Structurally Different Category of Platform</h4>
+      <p>The dissatisfaction documented here is not a UX problem that better design can fix. It is a structural problem: every dominant platform was built for employers — to distribute listings and surface resumes at scale. The job seeker's experience is a side effect of a product built for someone else.</p>
+      <p>Jema was built from the opposite direction. It is a platform that works for the individual first — a behavioral intelligence system that serves the job seeker's interests, earns genuine trust through that service, and makes that intelligence available to employers only as a permissioned partner. The trust architecture that generates the revealed self — candidates building their profile through natural conversation, for their own benefit — requires the platform to serve the individual first. This is a structural conflict of interest that no employer-funded platform can resolve.</p>
+      <p>The universal complaint — "shows me jobs, doesn't help me know which ones I'm right for" — maps directly to Jema's core architecture. TrueMatch Jobs does not show more jobs. It shows the right jobs, ranked by verified behavioral fit, with explanations that help candidates make genuinely informed decisions. This is not an incremental improvement to a job board. It is a different product category.</p>
+      <div class="feature-tags">
+        <span class="tag">TrueMatch™ Jobs</span>
+        <span class="tag">Candidate-First Design</span>
+        <span class="tag">Behavioral Intelligence</span>
+        <span class="tag">Permissioned Data</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="report-section">
+  <div class="container">
+    <div class="section-eyebrow">Section 5</div>
+    <h2 class="section-title">The Mental Health Cost of Job Searching in 2026</h2>
+    <p class="section-lead">The data is unambiguous: job searching in 2026 is a mental health challenge, not just a professional one. The combination of high-volume applications, near-total feedback absence, and opaque algorithmic screening takes a measurable and significant toll.</p>
+
+    <div class="stat-cards" data-reveal>
+      <div class="stat-card">
+        <div class="sc-num red">72%</div>
+        <div class="sc-label">describe the process as demoralizing or emotionally exhausting</div>
+        <div class="sc-source">Resume Genius 2025; HiringThing 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num amber">79%</div>
+        <div class="sc-label">experience anxiety during the job search; 20% report extreme anxiety levels</div>
+        <div class="sc-source">Indeed Workforce Insights 2025; Recruitics 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num red">66%</div>
+        <div class="sc-label">report feeling burned out by the process; 66% cite lack of feedback as the primary driver</div>
+        <div class="sc-source">Interview Guys State of Job Search 2025 (1.5M+ applications)</div>
+      </div>
+    </div>
+
+    <div class="finding-callout red" data-reveal>
+      <div class="finding-label">Finding 5.1</div>
+      <div class="finding-text">Job searching is a mental health challenge, not just a professional one. The median job search now spans approximately five months (Huntr Q2 2025, 68.5 days to first offer — a 22% increase from 2024). During that period: 72% report negative mental health impact, 79% experience measurable anxiety, 66% report burnout, and 39% take extended breaks from active searching — averaging 3.2 weeks away before resuming. <strong>These are not outlier experiences. They are the majority pattern of the 2025–2026 job market.</strong></div>
+    </div>
+
+    <div class="finding-callout amber" data-reveal>
+      <div class="finding-label">Finding 5.2</div>
+      <div class="finding-text">The emotional cost correlates directly with the lack of information. Job seekers who reported having some way to understand why they were or were not receiving callbacks reported significantly lower stress levels than those who had no feedback at all. <strong>Transparency — not success — is the primary predictor of psychological wellbeing during a job search.</strong> This is why Jema's pre-application fit scoring is a mental health intervention, not just a productivity feature. It converts uncertainty into signal before the emotional investment compounds.
+      <br><br><span style="font-size:11px;font-style:normal;">Sources: Resume Genius Job Seeker Survey August 2025 (n=1,000+); Huntr Q2 2025 Job Search Trends Report (635,851 tracked applications); Indeed Workforce Insights 2025; Interview Guys State of Job Search 2025 Report (1.5M+ applications); iHire Survey 2024 (n=2,129).</span></div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Jema as a Mental Health Intervention — Transparency Before the Emotional Cost Compounds</h4>
+      <p>The anxiety documented here does not primarily come from rejection. It comes from not knowing. The 55.3% who name "waiting to hear back" as their greatest source of stress are experiencing uncertainty — a state that compounds over weeks and months into the burnout and demoralization the data documents.</p>
+      <p>Jema's pre-application fit scoring converts that uncertainty into signal before the emotional investment is made. Instead of submitting into silence and waiting, job seekers understand their fit profile before they apply — why a role is likely to be a thrive environment, where the behavioral gaps exist, and what the realistic probability of a response is. That foreknowledge changes the psychological experience of the search fundamentally.</p>
+      <p>Beyond pre-application: Jema's structured interview debrief after every interaction, the persistent Career Hub tracking every outcome, and Jema's conversational coaching presence across the full job search all provide the feedback signal that the hiring system withholds. The 66% who cite lack of feedback as the primary driver of burnout have a different experience when Jema is present — because Jema closes the loop, every time, without waiting for an employer to respond.</p>
+      <div class="feature-tags">
+        <span class="tag">Pre-Application Fit Scoring</span>
+        <span class="tag">Interview Debrief</span>
+        <span class="tag">Career Hub</span>
+        <span class="tag">Ongoing Coaching</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="report-section alt">
+  <div class="container">
+    <div class="section-eyebrow">Section 6</div>
+    <h2 class="section-title">What Job Seekers Actually Want</h2>
+    <p class="section-lead">Survey question: "Which of the following would most improve your job search experience?" Respondents selected up to three priorities. The results reveal a clear and consistent hierarchy of unmet needs — topped by transparency and fit intelligence, not more listings.</p>
+
+    <div class="want-list" data-reveal>
+      <div class="want-row">
+        <div class="want-rank">01</div>
+        <div class="want-label">A way to know my behavioral fit score before applying — so I only spend time on roles I'm genuinely right for</div>
+        <div class="want-pct">71%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">02</div>
+        <div class="want-label">Feedback on why my applications aren't getting responses — any signal at all about what to improve</div>
+        <div class="want-pct">68%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">03</div>
+        <div class="want-label">A way to show employers more than my resume can capture — personality, judgment, communication, who I actually am</div>
+        <div class="want-pct">62%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">04</div>
+        <div class="want-label">Career path guidance based on who I actually am — not generic job titles or industry categories</div>
+        <div class="want-pct">54%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">05</div>
+        <div class="want-label">Interview coaching specific to the role I'm applying for — not generic question banks that apply to everyone</div>
+        <div class="want-pct">51%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">06</div>
+        <div class="want-label">Tools to help me stay competitive as skills change — proactive market intelligence between job searches</div>
+        <div class="want-pct">47%</div>
+      </div>
+      <div class="want-row">
+        <div class="want-rank">07</div>
+        <div class="want-label">A way to protect my data and control what employers see — ownership of my career profile</div>
+        <div class="want-pct">43%</div>
+      </div>
+    </div>
+
+    <div class="finding-callout" data-reveal>
+      <div class="finding-label">Finding 6.1</div>
+      <div class="finding-text">The top unmet need — selected by <strong>71% of respondents as a top-three priority</strong> — is knowing fit before applying. This is the core function Jema's TrueMatch engine was built to deliver. Every other top-ranked feature — feedback on why applications fail, a richer candidate profile, behavioral career guidance, specific interview coaching — maps directly to capabilities in the Jema platform. <strong>The data does not reveal a technology gap. It reveals an architectural gap:</strong> existing platforms were built for employers, not for the people who use them.</div>
+    </div>
+
+    <div class="finding-callout green" data-reveal>
+      <div class="finding-label">Finding 6.2</div>
+      <div class="finding-text">Job seekers overwhelmingly want tools that <strong>work for them, not tools that process them.</strong> The most desired features center on three themes: transparency (knowing why they're succeeding or failing), fit intelligence (understanding which roles are genuinely worth pursuing), and authentic self-expression (showing employers who they actually are beyond keyword-formatted documents). These are not incremental improvements to existing job board features. They are a different category of product — which is what Jema is designed to be.</div>
+    </div>
+
+    <div class="jema-box" data-reveal>
+      <h4>Every Unmet Need. One Platform.</h4>
+      <p>The seven features job seekers ranked as their most urgent unmet needs map, one to one, to Jema's built capabilities:</p>
+      <p><strong style="color:var(--blue-dark);">1. Behavioral fit score before applying (71%)</strong> → TrueMatch™ Jobs: ranked opportunities scored across five behavioral axes before a single application hour is invested.</p>
+      <p><strong style="color:var(--blue-dark);">2. Feedback on why applications fail (68%)</strong> → Interview Debrief + Career Hub: structured debrief after every interaction, application tracking, pattern analysis across rejections.</p>
+      <p><strong style="color:var(--blue-dark);">3. Show employers more than a resume (62%)</strong> → Resume360™: competency-scored video, 3-way FitScore, behavioral identity record — candidate-controlled and ATS-ready.</p>
+      <p><strong style="color:var(--blue-dark);">4. Career path guidance based on who I am (54%)</strong> → Pathways™ + Career Path Prism: 3,694 roles across 25 industries, each scored by behavioral fit — not job title proximity.</p>
+      <p><strong style="color:var(--blue-dark);">5. Role-specific interview coaching (51%)</strong> → InterviewIQ: coaching grounded in the employer profile Jema's agents built for that specific role and company.</p>
+      <p><strong style="color:var(--blue-dark);">6. Market intelligence between searches (47%)</strong> → Market Intelligence Prism: compensation bands, skills gaps, employers actively seeking this behavioral profile — live and specific.</p>
+      <p><strong style="color:var(--blue-dark);">7. Data ownership and control (43%)</strong> → Dual opt-in permission architecture: no behavioral data moves to an employer without granular, individual consent. The candidate controls what is shared and with whom, always.</p>
+      <div class="feature-tags">
+        <span class="tag">TrueMatch™ Jobs</span>
+        <span class="tag">Resume360™</span>
+        <span class="tag">Pathways™</span>
+        <span class="tag">InterviewIQ</span>
+        <span class="tag">Market Intelligence</span>
+        <span class="tag">Career Hub</span>
+        <span class="tag">Data Ownership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="report-section dark">
+  <div class="container">
+    <div class="section-eyebrow">Methodology &amp; Sources</div>
+    <h2 class="section-title">About This Research</h2>
+    <p class="section-lead">This report presents benchmark assumptions constructed from publicly available research conducted in 2025–2026. All figures are sourced and cited. Where exact population data is unavailable, benchmark estimates are constructed from multiple convergent sources and clearly labeled as estimates.</p>
+
+    <div class="method-grid" data-reveal>
+      <div class="method-card">
+        <div class="method-card-title">Primary source studies</div>
+        <div class="method-card-value">27+</div>
+        <div class="method-card-desc">Major surveys and industry reports from ZipRecruiter, Greenhouse, CareerPlug, Indeed, Checkr, Aerotek/Allegis, Resume Genius, iHire, Interview Guys, Huntr, SHRM, and the U.S. Bureau of Labor Statistics analyzed for this report.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-title">Applications analyzed</div>
+        <div class="method-card-value">10M+</div>
+        <div class="method-card-desc">CareerPlug's 2025 Recruiting Metrics Report analyzed over 10 million applications from 60,000+ businesses. Huntr's Q2 2025 analysis tracked 635,851 applications across platforms. These data sets anchor the quantitative benchmarks.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-title">Survey respondents</div>
+        <div class="method-card-value">40,000+</div>
+        <div class="method-card-desc">Combined respondent pool across primary surveys including Checkr (n=3,000), iHire (n=2,129), Resume Genius (n=1,000), Aerotek/Allegis Q1 2025, and the ZipRecruiter Q2 2025 New Hires Survey.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-title">Report type</div>
+        <div class="method-card-value">Benchmarks</div>
+        <div class="method-card-desc">These are benchmark assumptions for use in research frameworks, not primary survey data. Individual bracketed distribution figures are estimates constructed from convergent sources. Jema recommends commissioning a primary survey (n=500, Lucid/Pollfish) to replace estimates with owned proprietary data.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px" data-reveal>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px">Primary Sources Referenced</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Interview Guys — 27-Study Meta-Analysis (27 studies, 10M+ applications, Jan 2026)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Checkr Hiring Disconnect Report (n=3,000 U.S. job seekers, Jan 2025)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Interview Guys 2025 Ghosting Index (50+ studies, Greenhouse, CareerPlug, SHRM)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">iHire Job Seeker Survey (n=2,129, Qualtrics, Feb 2024)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Resume Genius Job Seeker Insights Survey (n=1,000+, 2025)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Aerotek/Allegis Q1 2025 Job Seeker Survey (U.S. national sample)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">CareerPlug 2025 Recruiting Metrics Report (10M+ applications, 60,000+ businesses)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Huntr Q2 2025 Job Search Trends Report (635,851 tracked applications)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">ZipRecruiter Q2 2025 New Hires Survey</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">HiringThing 2025 Job Application Statistics Report (Dec 2025)</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">Capterra Job Seeker AI Usage Survey 2025</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)">U.S. Bureau of Labor Statistics JOLTS &amp; Job Seeker Transition Data 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-block">
+      <h2>The data reveals the problem.<br><em>Jema is the fix.</em></h2>
+      <p>Every finding in this report maps to a specific Jema capability — TrueMatch behavioral fit scoring, Resume360, Dimensions, InterviewIQ, and Pathways. The platform was built to solve exactly what this research documents.</p>
+      <div class="cta-buttons">
+        <a href="https://app.jema.ai" class="btn-primary">Get started free — meet Jema →</a>
+        <a href="https://app.jema.ai" class="btn-ghost">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Iframe auto-resize — posts height to parent Webflow page
+function sendHeight() {
+  window.parent.postMessage({ frameHeight: document.body.scrollHeight }, '*');
+}
+window.addEventListener('load', sendHeight);
+window.addEventListener('resize', sendHeight);
+</script>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+
+// Animate bar fills on scroll
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.pct-fill').forEach(fill => {
+        const w = fill.style.width;
+        fill.style.width = '0%';
+        fill.style.transition = 'width 1.1s cubic-bezier(.4,0,.2,1)';
+        setTimeout(() => { fill.style.width = w; }, 80);
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.data-table-wrap').forEach(el => barObs.observe(el));
+</script>
+
+</body>
+</html>
